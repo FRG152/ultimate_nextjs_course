@@ -4,6 +4,7 @@ import "./globals.css";
 import ThemeProvider from "@/context/Theme";
 import { Figtree } from "next/font/google";
 import { cn } from "@/lib/utils";
+import Navbar from "@/components/navigation/navbar";
 
 const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
 
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar/>
           {children}
         </ThemeProvider>
       </body>
