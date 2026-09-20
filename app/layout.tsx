@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import ThemeProvider from "@/context/Theme";
+import { Figtree } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
 
 const inter = localFont({
   src: "./fonts/InterVF.ttf",
@@ -28,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.className} ${spaceGrotesk.variable} antialiased`}
+      className={cn("antialiased", inter.className, spaceGrotesk.variable, "font-sans", figtree.variable)}
     >
       <body className="min-h-full flex flex-col font-inter">
         <ThemeProvider
