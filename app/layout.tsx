@@ -4,6 +4,9 @@ import "./globals.css";
 import ThemeProvider from "@/context/Theme";
 import { Figtree } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/toast";
+import { SessionProvider } from "next-auth/react";
+import { auth } from "@/auth";
 
 const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -28,18 +31,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const session = await auth();
+
   return (
     <html
       lang="en"
       suppressHydrationWarning
       className={cn("antialiased", inter.className, spaceGrotesk.variable, "font-sans", figtree.variable)}
     >
-      <body className="font-inter flex min-h-full flex-col">
-        <ThemeProvider attribute={"class"} defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
-      </body>
+      <SessionProvider session={session}>
+        <body className="font-inter flex min-h-full flex-col">
+          <ThemeProvider attribute={"class"} defaultTheme="system" enableSystem disableTransitionOnChange>
+            {children}
+          </ThemeProvider>
+          <Toaster />
+        </body>
+      </SessionProvider>
     </html>
   );
 }
