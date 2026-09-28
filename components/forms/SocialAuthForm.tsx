@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { toast } from "../ui/toast";
-import { signIn } from "next-auth/react";
 import { Button } from "../ui/button";
+import { signIn } from "next-auth/react";
 
 const SocialAuthForm = () => {
   const buttonClass =
