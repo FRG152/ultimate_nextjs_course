@@ -1,15 +1,14 @@
 import Link from "next/link";
 import ROUTES from "@/constants/routes";
-import NavLinks from "../navigation/navbar/NavLinks";
-import { Button } from "../ui/button";
-import SidebarContent from "./SidebarContent";
+import NavLinks from "../navbar/NavLinks";
+import { Button } from "../../ui/button";
 
 const LeftSidebar = () => {
   return (
-    <SidebarContent>
-      <section className="flex h-full flex-col gap-6 pt-16">
+    <aside className="background-light900_dark200 no-scrollbar sticky top-21 hidden h-[calc(100vh-84px)] flex-col px-6 pt-10 pb-8 sm:flex">
+      <div className="flex h-full flex-col gap-6">
         <NavLinks isMobileNav />
-      </section>
+      </div>
 
       <div className="flex flex-col gap-3">
         <Link href={ROUTES.SIGN_IN}>
@@ -28,7 +27,7 @@ const LeftSidebar = () => {
           </Button>
         </Link>
       </div>
-    </SidebarContent>
+    </aside>
   );
 };
 

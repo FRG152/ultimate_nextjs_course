@@ -7,7 +7,7 @@ export default async function Home() {
   console.log(session);
 
   return (
-    <div>
+    <section className="flex-1 overflow-y-auto">
       <form
         className="px-10"
         action={async () => {
@@ -17,6 +17,6 @@ export default async function Home() {
       >
         <Button type="submit">Log out</Button>
       </form>
-    </div>
+    </section>
   );
 }

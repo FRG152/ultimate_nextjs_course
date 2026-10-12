@@ -1,17 +1,16 @@
 import Navbar from "@/components/navigation/navbar";
-import LeftSidebar from "@/components/sidebar/LeftSidebar";
-import RightSidebar from "@/components/sidebar/RightSidebar";
+import LeftSidebar from "@/components/navigation/sidebar/LeftSidebar";
+import RightSidebar from "@/components/navigation/sidebar/RightSidebar";
 import { ReactNode } from "react";
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <main>
+    <main className="background-light850_dark100">
       <Navbar />
-      <section className="flex h-screen items-center justify-between">
+      <section className="flex min-h-screen justify-between">
         <LeftSidebar />
         {children}
-        {/* TODO: Luego haremos crearemos el contenido para este componente */}
-        {/* <RightSidebar /> */}
+        <RightSidebar />
       </section>
     </main>
   );
