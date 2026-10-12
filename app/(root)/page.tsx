@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <div>
       <form
-        className="px-10 pt-[100px]"
+        className="px-10"
         action={async () => {
           "use server";
           await signOut({ redirectTo: ROUTES.SIGN_IN });
