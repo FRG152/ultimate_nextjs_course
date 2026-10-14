@@ -40,6 +40,13 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={cn("antialiased", inter.className, spaceGrotesk.variable, "font-sans", figtree.variable)}
     >
+      <head>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
+      </head>
       <SessionProvider session={session}>
         <body className="font-inter flex min-h-full flex-col">
           <ThemeProvider attribute={"class"} defaultTheme="system" enableSystem disableTransitionOnChange>
