@@ -2,22 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ROUTES from "@/constants/routes";
 import TagCard from "@/components/cards/TagCard";
-
-const hotQuestions = [
-  { _id: "1", title: "How to create a custom hook in React?" },
-  { _id: "2", title: "What is the difference between Server and Client Components in Next.js?" },
-  { _id: "3", title: "How to center a div with Tailwind CSS?" },
-  { _id: "4", title: "How do I protect routes with NextAuth v5?" },
-  { _id: "5", title: "When should I use useMemo vs useCallback?" },
-];
-
-const popularTags = [
-  { _id: "1", name: "react", questions: 100 },
-  { _id: "2", name: "javascript", questions: 200 },
-  { _id: "3", name: "typescript", questions: 150 },
-  { _id: "4", name: "nextjs", questions: 50 },
-  { _id: "5", name: "tailwindcss", questions: 75 },
-];
+import { hotQuestions, popularTags } from "@/constants";
 
 const RightSidebar = () => {
   return (
